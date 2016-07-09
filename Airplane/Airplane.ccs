@@ -1,0 +1,101 @@
+<Solution>
+  <PropertyGroup Name="Airplane" Version="3.10.0.0" Type="CocosStudio" />
+  <SolutionFolder>
+    <Group ctype="ResourceGroup">
+      <RootFolder Name=".">
+        <Folder Name="font">
+          <Fnt Name="font.fnt" />
+          <Image Name="font.png" />
+        </Folder>
+        <Folder Name="sound">
+          <Audio Name="achievement.mp3" />
+          <Audio Name="big_spaceship_flying.mp3" />
+          <Audio Name="bullet.mp3" />
+          <Audio Name="button.mp3" />
+          <Audio Name="enemy1_down.mp3" />
+          <Audio Name="enemy2_down.mp3" />
+          <Audio Name="enemy3_down.mp3" />
+          <Audio Name="game_music.mp3" />
+          <Audio Name="game_over.mp3" />
+          <Audio Name="get_bomb.mp3" />
+          <Audio Name="get_double_laser.mp3" />
+          <Audio Name="out_porp.mp3" />
+          <Audio Name="use_bomb.mp3" />
+        </Folder>
+        <Folder Name="ui">
+          <Folder Name="shoot">
+            <Image Name="bomb.png" />
+            <Image Name="bullet1.png" />
+            <Image Name="bullet2.png" />
+            <Image Name="enemy1.png" />
+            <Image Name="enemy1_down1.png" />
+            <Image Name="enemy1_down2.png" />
+            <Image Name="enemy1_down3.png" />
+            <Image Name="enemy1_down4.png" />
+            <Image Name="enemy2.png" />
+            <Image Name="enemy2_down1.png" />
+            <Image Name="enemy2_down2.png" />
+            <Image Name="enemy2_down3.png" />
+            <Image Name="enemy2_down4.png" />
+            <Image Name="enemy2_hit.png" />
+            <Image Name="enemy3_down1.png" />
+            <Image Name="enemy3_down2.png" />
+            <Image Name="enemy3_down3.png" />
+            <Image Name="enemy3_down4.png" />
+            <Image Name="enemy3_down5.png" />
+            <Image Name="enemy3_down6.png" />
+            <Image Name="enemy3_hit.png" />
+            <Image Name="enemy3_n1.png" />
+            <Image Name="enemy3_n2.png" />
+            <Image Name="game_pause_nor.png" />
+            <Image Name="game_pause_pressed.png" />
+            <Image Name="game_resume_nor.png" />
+            <Image Name="game_resume_pressed.png" />
+            <Image Name="hero_blowup_n1.png" />
+            <Image Name="hero_blowup_n2.png" />
+            <Image Name="hero_blowup_n3.png" />
+            <Image Name="hero_blowup_n4.png" />
+            <Image Name="hero1.png" />
+            <Image Name="hero2.png" />
+            <Image Name="ufo1.png" />
+            <Image Name="ufo2.png" />
+          </Folder>
+          <Folder Name="shoot_background">
+            <Image Name="background.png" />
+            <Image Name="btn_begin.png" />
+            <Image Name="btn_begin_pressed.png" />
+            <Image Name="btn_finish.png" />
+            <Image Name="btn_finish1.png" />
+            <Image Name="btn_finish1_pressed.png" />
+            <Image Name="btn_guide.png" />
+            <Image Name="btn_guide_pressed.png" />
+            <Image Name="btn_loading.png" />
+            <Image Name="game_loading1.png" />
+            <Image Name="game_loading2.png" />
+            <Image Name="game_loading3.png" />
+            <Image Name="game_loading4.png" />
+            <Image Name="gameover.png" />
+            <Image Name="GuideScene.png" />
+            <Image Name="headline.png" />
+            <Image Name="highscore.png" />
+            <Image Name="shoot_copyright.png" />
+          </Folder>
+        </Folder>
+        <Project Name="BeginScene.csd" Type="Scene" />
+        <Project Name="BulletLayer.csd" Type="Layer" />
+        <Project Name="ControlLayer.csd" Type="Layer" />
+        <Project Name="enemy1.csd" Type="Node" />
+        <Project Name="enemy2.csd" Type="Node" />
+        <Project Name="enemy3.csd" Type="Node" />
+        <Project Name="EnemyLayer.csd" Type="Layer" />
+        <Project Name="GameOverScene.csd" Type="Scene" />
+        <Project Name="heroPlane.csd" Type="Node" />
+        <Project Name="littlePlane.csd" Type="Node" />
+        <Project Name="MainScene.csd" Type="Scene" />
+        <Project Name="PlaneLayer.csd" Type="Layer" />
+        <Project Name="ToolLayer.csd" Type="Layer" />
+        <Project Name="GuideScene.csd" Type="Scene" />
+      </RootFolder>
+    </Group>
+  </SolutionFolder>
+</Solution>

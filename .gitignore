@@ -1,3 +1,8 @@
+# Cocos2dx Project Folder
+/Airplane/proj.android/*
+/Airplane/proj.ios_mac/*
+/Airplane/proj.win32/*
+
 # Compiled Object files
 *.slo
 *.lo
@@ -27,3 +32,4 @@
 *.exe
 *.out
 *.app
+
