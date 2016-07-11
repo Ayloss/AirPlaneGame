@@ -1,6 +1,7 @@
 #include "GameOverScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "SimpleAudioEngine.h"
 USING_NS_CC;
 using namespace ui;
 
@@ -21,6 +22,9 @@ bool GameOverScene::init()
 
 	rootNode = CSLoader::createNode("GameOverScene.csb");
 	addChild(rootNode);
+	//播放游戏结束音效
+	CocosDenshion::SimpleAudioEngine::getInstance()->stopBackgroundMusic();
+	CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("./sound/game_over.wav");
 
 	//添加返回按钮点击事件
 	auto goBackButton = dynamic_cast<Button*>(rootNode->getChildByName("goBack"));
@@ -31,8 +35,19 @@ bool GameOverScene::init()
 
 void GameOverScene::goBackGame(Ref *pSender, Widget::TouchEventType type)
 {
-	if (type == Widget::TouchEventType::ENDED)
+	switch (type)
+	{
+	case Widget::TouchEventType::BEGAN:
+	{
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("./sound/button.wav");
+		break;
+	}
+	case Widget::TouchEventType::ENDED:
+	{
 		tsm->gotoMainScene();
+		break;
+	}
+	}
 }
 
 void GameOverScene::setFinalScore(std::string score)
@@ -65,6 +80,9 @@ void GameOverScene::getHighScore()
 	//目前分数大于最高分时,更改最高分
 	if(highScore<finalScore)
 	{
+		//播放获得成就音效
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("./sound/achievement.wav");
+
 		highScore = finalScore;
 
 		UserDefault::sharedUserDefault()->setIntegerForKey("highScore", highScore);

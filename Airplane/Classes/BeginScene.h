@@ -22,9 +22,11 @@ public:
 	void guideGame(Ref *pSender, Widget::TouchEventType type);
 	//加载全部动画
 	void loadAnimation();
-
+	//加载全部音频文件
+	void loadMusic();
 	CREATE_FUNC(BeginScene);
 
 	SceneManager *tsm;
+
 };
 

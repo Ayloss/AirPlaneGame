@@ -2,6 +2,7 @@
 #include "ui/CocosGUI.h"
 #include "MainScene.h"
 #include "DifficultyControl.h"
+#include "SimpleAudioEngine.h"
 
 
 USING_NS_CC;
@@ -23,7 +24,9 @@ bool MainScene::init()
 {
 	if (!Scene::init())
 		return false;
-
+	//播放bgm
+	CocosDenshion::SimpleAudioEngine::getInstance()->playBackgroundMusic("./sound/game_music.wav", true);
+	
 	//初始设置难度等级为0
 	difficultyLevel = 0;
 

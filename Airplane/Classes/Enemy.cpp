@@ -1,6 +1,7 @@
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
 #include "DifficultyControl.h"
+#include "SimpleAudioEngine.h"
 #include "Enemy.h"
 
 USING_NS_CC;
@@ -150,23 +151,26 @@ void Enemy::destoryed()
 {
 	//停用所有动作
 	stopAllActions();
-	//创建损毁动画
+	//创建损毁动画并播放损毁音乐
 	auto animation = Animation::create();
 	switch (enemyType)
 	{
 	case little:
 	{
 		animation = AnimationCache::sharedAnimationCache()->getAnimation("enemy1Down");
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("./sound/enemy1_down.wav");
 		break;
 	}
 	case middle:
 	{
 		animation = AnimationCache::sharedAnimationCache()->getAnimation("enemy2Down");
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("./sound/enemy2_down.wav");
 		break;
 	}
 	case large:
 	{
 		animation = AnimationCache::sharedAnimationCache()->getAnimation("enemy3Down");
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("./sound/enemy3_down.wav");
 		break;
 	}
 	}

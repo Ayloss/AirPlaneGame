@@ -1,6 +1,7 @@
 #include "GuideScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "SimpleAudioEngine.h"
 #include "SceneManager.h"
 
 USING_NS_CC;
@@ -33,7 +34,18 @@ bool GuideScene::init()
 
 void GuideScene::startGame(Ref *pSender,Widget::TouchEventType type)
 {
-	if (type == Widget::TouchEventType::ENDED)
+	switch (type)
+	{
+	case cocos2d::ui::Widget::TouchEventType::BEGAN:
+	{
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("./sound/button.wav");
+		break;
+	}
+	case cocos2d::ui::Widget::TouchEventType::ENDED:
+	{
 		tsm->gotoMainScene();
-
+		break;
+	}
+	}
+		
 }

@@ -1,6 +1,7 @@
 #include "BulletLayer.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "SimpleAudioEngine.h"
 #define  BULLET_SPEED 500//子弹飞行速度 pixel/s
 #define BULLET_NUM_PER_SECOND 5.0//每秒钟的子弹数
 USING_NS_CC;
@@ -58,6 +59,8 @@ void BulletLayer::bulletCreate(float dt)
 	float heroPlaneHeight = pHeroPlane->getContentSize().height;
 	float winHeight = Director::sharedDirector()->getWinSize().height;
 
+	//播放子弹音效
+	CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("./sound/bullet.wav");
 	//生成普通子弹
 	if (specialBullets == 0)
 	{
@@ -123,5 +126,7 @@ void BulletLayer::stopShooting()
 
 void BulletLayer::getSpecialBullets()
 {
+	//播放获得特殊子弹音效
+	CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("./sound/get_double_laser.wav");
 	specialBullets += 30;
 }

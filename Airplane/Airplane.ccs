@@ -8,19 +8,19 @@
           <Image Name="font.png" />
         </Folder>
         <Folder Name="sound">
-          <Audio Name="achievement.mp3" />
-          <Audio Name="big_spaceship_flying.mp3" />
-          <Audio Name="bullet.mp3" />
-          <Audio Name="button.mp3" />
-          <Audio Name="enemy1_down.mp3" />
-          <Audio Name="enemy2_down.mp3" />
-          <Audio Name="enemy3_down.mp3" />
-          <Audio Name="game_music.mp3" />
-          <Audio Name="game_over.mp3" />
-          <Audio Name="get_bomb.mp3" />
-          <Audio Name="get_double_laser.mp3" />
-          <Audio Name="out_porp.mp3" />
-          <Audio Name="use_bomb.mp3" />
+          <Audio Name="achievement.wav" />
+          <Audio Name="big_spaceship_flying.wav" />
+          <Audio Name="bullet.wav" />
+          <Audio Name="button.wav" />
+          <Audio Name="enemy1_down.wav" />
+          <Audio Name="enemy2_down.wav" />
+          <Audio Name="enemy3_down.wav" />
+          <Audio Name="game_music.wav" />
+          <Audio Name="game_over.wav" />
+          <Audio Name="get_bomb.wav" />
+          <Audio Name="get_double_laser.wav" />
+          <Audio Name="out_porp.wav" />
+          <Audio Name="use_bomb.wav" />
         </Folder>
         <Folder Name="ui">
           <Folder Name="shoot">
@@ -89,12 +89,12 @@
         <Project Name="enemy3.csd" Type="Node" />
         <Project Name="EnemyLayer.csd" Type="Layer" />
         <Project Name="GameOverScene.csd" Type="Scene" />
+        <Project Name="GuideScene.csd" Type="Scene" />
         <Project Name="heroPlane.csd" Type="Node" />
         <Project Name="littlePlane.csd" Type="Node" />
         <Project Name="MainScene.csd" Type="Scene" />
         <Project Name="PlaneLayer.csd" Type="Layer" />
         <Project Name="ToolLayer.csd" Type="Layer" />
-        <Project Name="GuideScene.csd" Type="Scene" />
       </RootFolder>
     </Group>
   </SolutionFolder>

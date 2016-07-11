@@ -1,6 +1,7 @@
 #include "BeginScene.h"
 #include "cocostudio/CocoStudio.h"
 #include "ui/CocosGUI.h"
+#include "SimpleAudioEngine.h"
 USING_NS_CC;
 using namespace ui;
 
@@ -22,6 +23,7 @@ bool BeginScene::init()
 	rootNode = CSLoader::createNode("BeginScene.csb");
 	addChild(rootNode);
 
+	//获取按钮节点
 	auto startButton = dynamic_cast<Button*>(rootNode->getChildByName("start"));
 	auto guideButton = dynamic_cast<Button*>(rootNode->getChildByName("guide"));
 	//加载小飞机动画
@@ -31,6 +33,8 @@ bool BeginScene::init()
 
 	//加载全部动画
 	loadAnimation();
+	//加载全部音效
+	loadMusic();
 	//startButton->setEnabled(true);
 	//此处待添加加载事件
 
@@ -43,14 +47,38 @@ bool BeginScene::init()
 }
 void BeginScene::startGame(Ref *pSender, Widget::TouchEventType type)
 {
-	if (type == Widget::TouchEventType::ENDED)
+	switch (type)
+	{
+	case cocos2d::ui::Widget::TouchEventType::BEGAN:
+	{
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("./sound/button.wav");
+		break;
+	}
+	case cocos2d::ui::Widget::TouchEventType::ENDED:
+	{
 		tsm->gotoMainScene();
+		break;
+	}
+	}
+
 }
 
 void BeginScene::guideGame(Ref *pSender, Widget::TouchEventType type)
 {
-	if (type == Widget::TouchEventType::ENDED)
+	switch (type)
+	{
+	case cocos2d::ui::Widget::TouchEventType::BEGAN:
+	{
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("./sound/button.wav");
+		break;
+	}
+	case cocos2d::ui::Widget::TouchEventType::ENDED:
+	{
 		tsm->gotoGuideScene();
+		break;
+	}
+	}
+		
 }
 
 void BeginScene::loadAnimation()
@@ -65,7 +93,7 @@ void BeginScene::loadAnimation()
 		"./ui/shoot/hero_blowup_n4.png"
 	};
 
-	 //敌机动画文件
+	//敌机动画文件
 	static const char* enemyAnimationFile[] = {
 		"./ui/shoot/enemy1_down1.png",
 		"./ui/shoot/enemy1_down2.png",
@@ -128,4 +156,29 @@ void BeginScene::loadAnimation()
 	AnimationCache::sharedAnimationCache()->addAnimation(loader[5], "enemy3Alive");
 	AnimationCache::sharedAnimationCache()->addAnimation(loader[6], "enemy3Hitted");
 	AnimationCache::sharedAnimationCache()->addAnimation(loader[7], "enemy3Down");
+}
+
+void BeginScene::loadMusic()
+{
+	//全部音频文件
+	static const char* musicFile[13] = {
+		"./sound/game_music.wav"
+		,"./sound/achievement.wav"
+		,"./sound/big_spaceship_flying.wav"
+		,"./sound/bullet.wav"
+		,"./sound/button.wav"
+		,"./sound/enemy1_down.wav"
+		,"./sound/enemy2_down.wav"
+		,"./sound/enemy3_down.wav"
+		,"./sound/game_over.wav"
+		,"./sound/get_bomb.wav"
+		,"./sound/get_double_laser.wav"
+		,"./sound/out_porp.wav"
+		,"./sound/use_bomb.wav"
+	};
+	//预加载全部音频文件
+	CocosDenshion::SimpleAudioEngine::getInstance()->preloadBackgroundMusic(musicFile[0]);
+	for (int i = 1;i < 13;i++)
+		CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect(musicFile[i]);
+
 }

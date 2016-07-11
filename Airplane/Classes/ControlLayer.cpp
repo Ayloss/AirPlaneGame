@@ -2,6 +2,7 @@
 #include "cocos2d.h"
 #include "ui/CocosGUI.h"
 #include "cocostudio/CocoStudio.h"
+#include "SimpleAudioEngine.h"
 #include "ControlLayer.h"
 #include "PlaneLayer.h"
 #include "DifficultyControl.h"
@@ -24,7 +25,7 @@ bool ControlLayer::init()
 	bombNumBox = dynamic_cast<TextBMFont*>(rootNode->getChildByName("bombNum"));
 	scoreBox = dynamic_cast<TextBMFont*>(rootNode->getChildByName("score"));
 	//添加暂停按钮的监视事件
-	gameControlButton->addTouchEventListener(CC_CALLBACK_2(ControlLayer::menuCallBack,this));
+	gameControlButton->addTouchEventListener(CC_CALLBACK_2(ControlLayer::menuCallBack, this));
 
 	return true;
 }
@@ -58,6 +59,9 @@ ControlLayer::~ControlLayer()
 
 void ControlLayer::bombNumIncrease()
 {
+	//播放获得炸弹音效
+	CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("./sound/get_bomb.wav");
+
 	bombNum++;
 	//更改显示的炸弹数
 	std::string b = "X";
@@ -66,10 +70,13 @@ void ControlLayer::bombNumIncrease()
 
 void ControlLayer::bombNumDecrease()
 {
+	//播放使用炸弹音效
+	CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("./sound/use_bomb.wav");
+
 	bombNum--;
 	//更改显示的炸弹数
 	std::string b = "X";
-	bombNumBox->setText(b + String::createWithFormat("%d",bombNum)->getCString());
+	bombNumBox->setText(b + String::createWithFormat("%d", bombNum)->getCString());
 }
 
 int ControlLayer::getBombNum()
@@ -83,7 +90,7 @@ void ControlLayer::scoreIncrease(int score)
 	//监视难度系数
 	difficultyLevel = scoreNum / DIFFICULTY_DEGREE;
 	//更改分数
-	scoreBox->setText(String::createWithFormat("%d",scoreNum)->getCString());
+	scoreBox->setText(String::createWithFormat("%d", scoreNum)->getCString());
 }
 
 int ControlLayer::getScore()
@@ -95,7 +102,12 @@ void ControlLayer::menuCallBack(Ref *event, Widget::TouchEventType type)
 {
 	switch (type)
 	{
-	case cocos2d::ui::Widget::TouchEventType::ENDED:
+	case Widget::TouchEventType::BEGAN:
+	{
+		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("./sound/button.wav");
+		break;
+	}
+	case Widget::TouchEventType::ENDED:
 	{
 		if (!Director::sharedDirector()->isPaused())
 		{

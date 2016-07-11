@@ -1,3 +1,4 @@
+#include "SimpleAudioEngine.h"
 #include "SceneManager.h"
 #include "BeginScene.h"
 #include "GuideScene.h"
@@ -68,5 +69,6 @@ void SceneManager::gotoGameOverScene(std::string finalScore)
 	gameOver->getHighScore();
 	gameOverScene->addChild(gameOver);
 	auto *gameOverSceneWithAnimation = TransitionMoveInT::create(0.5, gameOverScene);
+	//ÇÐ»»³¡¾°
 	Director::getInstance()->replaceScene(gameOverSceneWithAnimation);
 }
