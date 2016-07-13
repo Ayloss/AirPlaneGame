@@ -35,7 +35,7 @@
             <PrePosition X="0.7511" Y="0.0952" />
             <PreSize X="0.3125" Y="0.0600" />
             <TextColor A="255" R="65" G="65" B="70" />
-            <DisabledFileData Type="Normal" Path="ui/shoot_background/btn_finish.png" Plist="" />
+            <DisabledFileData Type="Default" Path="Default/Button_Disable.png" Plist="" />
             <PressedFileData Type="Normal" Path="ui/shoot_background/btn_finish1_pressed.png" Plist="" />
             <NormalFileData Type="Normal" Path="ui/shoot_background/btn_finish1.png" Plist="" />
             <OutlineColor A="255" R="255" G="0" B="0" />

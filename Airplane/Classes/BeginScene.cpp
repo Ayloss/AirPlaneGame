@@ -24,23 +24,16 @@ bool BeginScene::init()
 	addChild(rootNode);
 
 	//获取按钮节点
-	auto startButton = dynamic_cast<Button*>(rootNode->getChildByName("start"));
-	auto guideButton = dynamic_cast<Button*>(rootNode->getChildByName("guide"));
+	startButton = dynamic_cast<Button*>(rootNode->getChildByName("start"));
+	guideButton = dynamic_cast<Button*>(rootNode->getChildByName("guide"));
 	//加载小飞机动画
 	auto littlePlaneAnimation = CSLoader::createTimeline("littlePlane.csb");
 	rootNode->runAction(littlePlaneAnimation);
 	littlePlaneAnimation->gotoFrameAndPlay(0, 72, true);
 
-	//加载全部动画
-	loadAnimation();
-	//加载全部音效
-	loadMusic();
+	scheduleOnce(schedule_selector(BeginScene::loadRes), 0.1);
 	//startButton->setEnabled(true);
 	//此处待添加加载事件
-
-	//添加按钮的监听事件
-	startButton->addTouchEventListener(CC_CALLBACK_2(BeginScene::startGame, this));
-	guideButton->addTouchEventListener(CC_CALLBACK_2(BeginScene::guideGame, this));
 
 	return true;
 
@@ -130,8 +123,8 @@ void BeginScene::loadAnimation()
 		else
 			loader[1]->addSpriteFrameWithFile(cache);
 	}
-	AnimationCache::sharedAnimationCache()->addAnimation(loader[0], "heroAlive");
-	AnimationCache::sharedAnimationCache()->addAnimation(loader[1], "heroDead");
+	AnimationCache::getInstance()->addAnimation(loader[0], "heroAlive");
+	AnimationCache::getInstance()->addAnimation(loader[1], "heroDead");
 	//加载敌机动画
 	for (int i = 0;i < 18;i++)
 	{
@@ -150,12 +143,12 @@ void BeginScene::loadAnimation()
 		else if (i > 11 && i < 18)
 			loader[7]->addSpriteFrameWithFile(cache);
 	}
-	AnimationCache::sharedAnimationCache()->addAnimation(loader[2], "enemy1Down");
-	AnimationCache::sharedAnimationCache()->addAnimation(loader[3], "enemy2Hitted");
-	AnimationCache::sharedAnimationCache()->addAnimation(loader[4], "enemy2Down");
-	AnimationCache::sharedAnimationCache()->addAnimation(loader[5], "enemy3Alive");
-	AnimationCache::sharedAnimationCache()->addAnimation(loader[6], "enemy3Hitted");
-	AnimationCache::sharedAnimationCache()->addAnimation(loader[7], "enemy3Down");
+	AnimationCache::getInstance()->addAnimation(loader[2], "enemy1Down");
+	AnimationCache::getInstance()->addAnimation(loader[3], "enemy2Hitted");
+	AnimationCache::getInstance()->addAnimation(loader[4], "enemy2Down");
+	AnimationCache::getInstance()->addAnimation(loader[5], "enemy3Alive");
+	AnimationCache::getInstance()->addAnimation(loader[6], "enemy3Hitted");
+	AnimationCache::getInstance()->addAnimation(loader[7], "enemy3Down");
 }
 
 void BeginScene::loadMusic()
@@ -181,4 +174,20 @@ void BeginScene::loadMusic()
 	for (int i = 1;i < 13;i++)
 		CocosDenshion::SimpleAudioEngine::getInstance()->preloadEffect(musicFile[i]);
 
+
+}
+
+void BeginScene::loadRes(float dt)
+{
+	//加载动画和音乐
+	loadAnimation();
+	loadMusic();
+
+	//添加按钮的监听事件
+	startButton->addTouchEventListener(CC_CALLBACK_2(BeginScene::startGame, this));
+	guideButton->addTouchEventListener(CC_CALLBACK_2(BeginScene::guideGame, this));
+
+	//设置按钮可用
+	startButton->setEnabled(true);
+	guideButton->setEnabled(true);
 }

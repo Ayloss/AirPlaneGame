@@ -10,6 +10,8 @@ class BeginScene :
 {
 private:
 	Node *rootNode;
+	Button *startButton;
+	Button *guideButton;
 public:
 	BeginScene();
 	~BeginScene();
@@ -24,6 +26,8 @@ public:
 	void loadAnimation();
 	//加载全部音频文件
 	void loadMusic();
+	//加载资源文件
+	void loadRes(float dt);
 	CREATE_FUNC(BeginScene);
 
 	SceneManager *tsm;

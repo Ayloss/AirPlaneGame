@@ -26,7 +26,7 @@
             <PreSize X="0.9187" Y="0.1213" />
             <FileData Type="Normal" Path="ui/shoot_background/headline.png" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="start" ActionTag="-1726069648" Tag="29" IconVisible="False" LeftMargin="165.0000" RightMargin="165.0000" TopMargin="444.0916" BottomMargin="307.9084" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="26" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="start" ActionTag="-1726069648" Tag="29" IconVisible="False" LeftMargin="165.0000" RightMargin="165.0000" TopMargin="444.0916" BottomMargin="307.9084" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="26" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="150.0000" Y="48.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="240.0000" Y="331.9084" />
@@ -51,7 +51,7 @@
             <PreSize X="0.0000" Y="0.0000" />
             <FileData Type="Normal" Path="littlePlane.csd" Plist="" />
           </AbstractNodeData>
-          <AbstractNodeData Name="guide" ActionTag="315544198" Tag="13" IconVisible="False" LeftMargin="165.0000" RightMargin="165.0000" TopMargin="516.0000" BottomMargin="236.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="26" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
+          <AbstractNodeData Name="guide" ActionTag="315544198" Tag="13" IconVisible="False" LeftMargin="165.0000" RightMargin="165.0000" TopMargin="516.0000" BottomMargin="236.0000" TouchEnable="True" FontSize="14" Scale9Enable="True" LeftEage="15" RightEage="15" TopEage="11" BottomEage="11" Scale9OriginX="15" Scale9OriginY="11" Scale9Width="120" Scale9Height="26" DisplayState="False" ShadowOffsetX="2.0000" ShadowOffsetY="-2.0000" ctype="ButtonObjectData">
             <Size X="150.0000" Y="48.0000" />
             <AnchorPoint ScaleX="0.5000" ScaleY="0.5000" />
             <Position X="240.0000" Y="260.0000" />

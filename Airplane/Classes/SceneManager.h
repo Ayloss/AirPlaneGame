@@ -16,6 +16,9 @@ public:
 	Scene* getMainScene();
 	Scene* getGameOverScene();
 
+
+
+
 	//创建开始场景
 	void createBeginScene();
 	//切换教程场景

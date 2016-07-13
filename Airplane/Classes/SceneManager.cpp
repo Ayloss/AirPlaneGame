@@ -29,6 +29,7 @@ cocos2d::Scene* SceneManager::getGameOverScene()
 	return gameOverScene;
 }
 
+
 void SceneManager::createBeginScene()
 {
 	beginScene = Scene::create();

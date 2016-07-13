@@ -222,7 +222,7 @@ void MainScene::gameOver()
 	unschedule(schedule_selector(MainScene::update));
 	//Ö÷½Ç·É»ú±¬Õ¨¶¯»­
 	Animation* animation = Animation::create();
-	animation = AnimationCache::sharedAnimationCache()->getAnimation("heroDead");
+	animation = AnimationCache::getInstance()->getAnimation("heroDead");
 	animation->setDelayPerUnit(0.2);
 	animation->setLoops(1);
 	Animate* animate = Animate::create(animation);

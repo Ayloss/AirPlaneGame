@@ -92,12 +92,12 @@ void Enemy::getHurt()
 		break;
 	case middle:
 	{
-		animation = AnimationCache::sharedAnimationCache()->getAnimation("enemy2Hitted");
+		animation = AnimationCache::getInstance()->getAnimation("enemy2Hitted");
 		break;
 	}
 	case large:
 	{
-		animation = AnimationCache::sharedAnimationCache()->getAnimation("enemy3Hitted");
+		animation = AnimationCache::getInstance()->getAnimation("enemy3Hitted");
 		break;
 	}
 	}
@@ -138,7 +138,7 @@ void Enemy::setAnimation()
 	{
 		//超大型飞机初始动画
 		auto animation = Animation::create();
-		animation = AnimationCache::sharedAnimationCache()->getAnimation("enemy3Alive");
+		animation = AnimationCache::getInstance()->getAnimation("enemy3Alive");
 		animation->setDelayPerUnit(0.1);
 		auto animate = RepeatForever::create(Animate::create(animation));
 		runAction(RepeatForever::create(animate));
@@ -157,19 +157,19 @@ void Enemy::destoryed()
 	{
 	case little:
 	{
-		animation = AnimationCache::sharedAnimationCache()->getAnimation("enemy1Down");
+		animation = AnimationCache::getInstance()->getAnimation("enemy1Down");
 		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("./sound/enemy1_down.wav");
 		break;
 	}
 	case middle:
 	{
-		animation = AnimationCache::sharedAnimationCache()->getAnimation("enemy2Down");
+		animation = AnimationCache::getInstance()->getAnimation("enemy2Down");
 		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("./sound/enemy2_down.wav");
 		break;
 	}
 	case large:
 	{
-		animation = AnimationCache::sharedAnimationCache()->getAnimation("enemy3Down");
+		animation = AnimationCache::getInstance()->getAnimation("enemy3Down");
 		CocosDenshion::SimpleAudioEngine::getInstance()->playEffect("./sound/enemy3_down.wav");
 		break;
 	}

@@ -114,12 +114,16 @@ void ControlLayer::menuCallBack(Ref *event, Widget::TouchEventType type)
 			//更改按钮的图片
 			gameControlButton->loadTextureNormal("./ui/shoot/game_resume_nor.png");
 			gameControlButton->loadTexturePressed("./ui/shoot/game_resume_pressed.png");
+			CocosDenshion::SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+			CocosDenshion::SimpleAudioEngine::getInstance()->pauseAllEffects();
 			Director::sharedDirector()->pause();
 		}
 		else
 		{
 			gameControlButton->loadTextureNormal("./ui/shoot/game_pause_nor.png");
 			gameControlButton->loadTexturePressed("./ui/shoot/game_pause_pressed.png");
+			CocosDenshion::SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+			CocosDenshion::SimpleAudioEngine::getInstance()->resumeAllEffects();
 			Director::sharedDirector()->resume();
 		}
 		break;

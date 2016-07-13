@@ -64,7 +64,6 @@
             <Image Name="background.png" />
             <Image Name="btn_begin.png" />
             <Image Name="btn_begin_pressed.png" />
-            <Image Name="btn_finish.png" />
             <Image Name="btn_finish1.png" />
             <Image Name="btn_finish1_pressed.png" />
             <Image Name="btn_guide.png" />
@@ -78,7 +77,6 @@
             <Image Name="GuideScene.png" />
             <Image Name="headline.png" />
             <Image Name="highscore.png" />
-            <Image Name="shoot_copyright.png" />
           </Folder>
         </Folder>
         <Project Name="BeginScene.csd" Type="Scene" />

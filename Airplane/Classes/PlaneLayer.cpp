@@ -5,7 +5,7 @@
 USING_NS_CC;
 
 #define MOVE_INTERVAL 0.01
-#define DISTANCE_PER_MOVE 3//飞机每次移动的距离
+#define DISTANCE_PER_MOVE 4//飞机每次移动的距离
 
 PlaneLayer* PlaneLayer::sharedPlaneLayer = NULL;
 bool PlaneLayer::init()
@@ -166,7 +166,7 @@ void PlaneLayer::setAnimation()
 {
 	Animation* animation = Animation::create();
 
-	animation = AnimationCache::sharedAnimationCache()->getAnimation("heroAlive");
+	animation = AnimationCache::getInstance()->getAnimation("heroAlive");
 	animation->setDelayPerUnit(0.1);
 	Animate* animate = Animate::create(animation);
 	heroPlane->runAction(RepeatForever::create(animate));
