@@ -5,8 +5,8 @@ class PlaneLayer :
 	public Layer
 {
 private:
-	Sprite *heroPlane;
-	Node *rootNode;
+	Sprite *heroPlane;//主角飞机
+	Node *rootNode;//根节点
 public:
 	virtual bool init();
 
@@ -17,6 +17,7 @@ public:
 	PlaneLayer();
 	~PlaneLayer();
 
+	//返回主角飞机的精灵
 	Sprite* shareHeroPlane();
 
 	//键盘事件回调函数

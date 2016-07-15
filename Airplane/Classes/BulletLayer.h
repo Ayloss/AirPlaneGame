@@ -20,14 +20,19 @@ public:
 
 	//返回子弹的数组
 	Vector<Sprite*>* getAllBullets();
+
 	//子弹产生回调函数
 	void bulletCreate(float dt);
+
 	//子弹自然消失回调函数
 	void bulletDisappear(Node *pSender);
+
 	//设立产生子弹定时器
 	void startShooting();
+
 	//取消产生子弹定时器
 	void stopShooting();
+
 	//增加特殊子弹
 	void getSpecialBullets();
 

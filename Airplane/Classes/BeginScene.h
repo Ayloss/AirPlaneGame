@@ -9,14 +9,16 @@ class BeginScene :
 	public Scene
 {
 private:
-	Node *rootNode;
-	Button *startButton;
-	Button *guideButton;
+	Node *rootNode;//场景根节点
+	Button *startButton;//开始按钮
+	Button *guideButton;//玩法按钮
 public:
 	BeginScene();
 	~BeginScene();
 
 	virtual bool init();
+
+	CREATE_FUNC(BeginScene);
 
 	//开始游戏回调函数
 	void startGame(Ref *pSender, Widget::TouchEventType type);
@@ -28,8 +30,8 @@ public:
 	void loadMusic();
 	//加载资源文件
 	void loadRes(float dt);
-	CREATE_FUNC(BeginScene);
 
+	//指向场景控制器的指针
 	SceneManager *tsm;
 
 };

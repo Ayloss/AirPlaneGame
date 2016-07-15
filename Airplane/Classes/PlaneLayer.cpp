@@ -19,15 +19,8 @@ bool PlaneLayer::init()
 
 	//找到主角飞机节点
 	heroPlane = (Sprite*)rootNode->getChildByName("heroPlane");
-	//heroPlane =(Sprite*)CSLoader::createNode("enemy1.csb");
-	//heroPlane->setPosition(ccp(179,0));
 
-	//rootNode->addChild(heroPlane);
-	/*heroPlane->setContentSize(Size(102, 126));*/
 	//加载主角飞机动画
-	/*auto heroPlaneAnimation = CSLoader::createTimeline("heroPlane.csb");
-	rootNode->runAction(heroPlaneAnimation);
-	heroPlaneAnimation->gotoFrameAndPlay(0, true);*/
 	setAnimation();
 
 	//键盘监听事件,控制飞机移动
